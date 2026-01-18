@@ -18,3 +18,5 @@ He creado esta app con Angular para cubrir mi necesidad de tener a mano los coma
 1. Desplegado en Github Pages de forma manual
 2. Automaticé el proceso de despliegue
 
+APP desplegada en Github Actions:
+https://javierallvarez.github.io/some-gam-commands
