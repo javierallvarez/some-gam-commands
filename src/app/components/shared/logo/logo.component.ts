@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-logo',
@@ -9,7 +10,8 @@ import { CommonModule } from '@angular/common';
     <img 
       src="assets/gam-docs-logo.png" 
       alt="GAM Docs" 
-      [class]="getClasses()">
+      [class]="getClasses()"
+      (click)="goHome()">
   `
 })
 export class LogoComponent {
@@ -17,8 +19,14 @@ export class LogoComponent {
   @Input() variant: 'default' | 'white' | 'sidebar' = 'default';
   @Input() customClass: string = '';
 
+  constructor(private router: Router) {}
+
+  goHome() {
+    this.router.navigate(['/']);
+  }
+
   getClasses(): string {
-    const base = 'w-auto object-contain transition-all duration-300';
+    const base = 'w-auto object-contain transition-all duration-300 cursor-pointer';
     
     const variants = {
       default: '',
